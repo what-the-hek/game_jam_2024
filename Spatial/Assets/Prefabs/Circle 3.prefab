@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 900350907176394941}
   - component: {fileID: -48934825775800997}
   m_Layer: 0
-  m_Name: Circle 2
+  m_Name: Circle 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.776749, y: 2.8373978, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5f69878827d05e34d94be5fa725846dc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 94d2053e0fe4bcd44866578f88246a4b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -144,4 +144,4 @@ MonoBehaviour:
   slot: {fileID: 0}
   isOverSlot: 0
   isLocked: 0
-  soundClip: {fileID: 8300000, guid: cb555b41f3f97e14db049dba21d641c5, type: 3}
+  soundClip: {fileID: 0}
