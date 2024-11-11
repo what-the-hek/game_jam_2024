@@ -16,10 +16,13 @@ public class DragAndDrop2D : MonoBehaviour
     // Reference to the sound you want to play (drag the sound file here in the Inspector)
     public AudioClip soundClip;
 
+    private scoreManager scoreManager;
+
     private void Start()
     {
         originalPosition = transform.position;
         audioSource = GetComponent<AudioSource>();
+        scoreManager = FindObjectOfType<scoreManager>();
     }
 
     private void OnMouseDown()
@@ -91,6 +94,31 @@ public class DragAndDrop2D : MonoBehaviour
         // Optionally, disable the collider to avoid further collisions
         GetComponent<Collider2D>().enabled = false;
         GetComponent<Rigidbody2D>().simulated = false;
+
+        // scoring not working
+        // if (isLocked)
+        // { if (gameObject.CompareTag("work") ||
+        //      gameObject.CompareTag("relationships") ||
+        //      gameObject.CompareTag("leisure") ||
+        //      gameObject.CompareTag("personal"));
+        //     {
+        //     scoreManager.AddScore(gameObject.tag); //error here
+        //     }
+        // }
+    }
+
+    private void Scoring()
+    {
+        if (isLocked = true)
+            { if (gameObject.CompareTag("work") ||
+                gameObject.CompareTag("relationships") ||
+                gameObject.CompareTag("leisure") ||
+                gameObject.CompareTag("personal"));
+                {
+                scoreManager.AddScore(gameObject.tag); 
+                }
+            }
+            Debug.Log("Total Score: " + scoreManager.totalScore);
     }
 
     // Helper method to get the world position of the mouse
