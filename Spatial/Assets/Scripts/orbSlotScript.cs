@@ -17,6 +17,7 @@ public class DragAndDrop2D : MonoBehaviour
     public AudioClip soundClip;
 
     private scoreManager scoreManager;
+    public int score = 0;
 
     private void Start()
     {
@@ -70,7 +71,9 @@ public class DragAndDrop2D : MonoBehaviour
             PlaySoundEffect();
             slot = other.gameObject.transform;
             isOverSlot = true;  // Set to true when the object enters the slot's trigger area
+            score += 1;
         }
+        Debug.Log("Score: " + score);
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -107,19 +110,19 @@ public class DragAndDrop2D : MonoBehaviour
         // }
     }
 
-    private void Scoring()
-    {
-        if (isLocked = true)
-            { if (gameObject.CompareTag("work") ||
-                gameObject.CompareTag("relationships") ||
-                gameObject.CompareTag("leisure") ||
-                gameObject.CompareTag("personal"));
-                {
-                scoreManager.AddScore(gameObject.tag); 
-                }
-            }
-            Debug.Log("Total Score: " + scoreManager.totalScore);
-    }
+    // private void Scoring()
+    // {
+    //     if (isLocked = true)
+    //         { if (gameObject.CompareTag("work") ||
+    //             gameObject.CompareTag("relationships") ||
+    //             gameObject.CompareTag("leisure") ||
+    //             gameObject.CompareTag("personal"));
+    //             {
+    //             scoreManager.AddScore(gameObject.tag); 
+    //             }
+    //         }
+    //         Debug.Log("Total Score: " + scoreManager.totalScore);
+    // }
 
     // Helper method to get the world position of the mouse
     private Vector3 GetMouseWorldPosition()
