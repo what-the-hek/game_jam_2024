@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManagerScript : MonoBehaviour
 {
+    public string sceneName = "";
     public globalVariables globalVariables;
     public scoreManager scoreManager;
     public TextMeshProUGUI workScoreText;
@@ -38,6 +40,7 @@ public class GameManagerScript : MonoBehaviour
 
     void EndGame()
     {
+        SceneManager.LoadScene(sceneName);
         Debug.Log("game over");
     }
 
