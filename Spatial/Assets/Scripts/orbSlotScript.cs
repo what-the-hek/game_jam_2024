@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DragAndDrop2D : MonoBehaviour
@@ -15,9 +16,7 @@ public class DragAndDrop2D : MonoBehaviour
 
     // Reference to the sound you want to play (drag the sound file here in the Inspector)
     public AudioClip soundClip;
-
     private scoreManager scoreManager;
-    public int score = 0;
 
     private void Start()
     {
@@ -54,6 +53,10 @@ public class DragAndDrop2D : MonoBehaviour
         if (isOverSlot)
         {
             LockInSlot();
+
+            // when you addscore here, it adds once and then never again for some reason
+            scoreManager.AddScore();
+            // return;
         }
         else
         {
@@ -67,13 +70,13 @@ public class DragAndDrop2D : MonoBehaviour
         Debug.Log("On Trigger Enter");
         if (!isLocked)
         {
-            // insert sound here pls
-            PlaySoundEffect();
             slot = other.gameObject.transform;
             isOverSlot = true;  // Set to true when the object enters the slot's trigger area
-            score += 1;
+
+            // when this addscore is here, it is indiscriminate about whether or not the orb is locked
+            // if you try to add an islocked check it stops working altogether
+            // AddScore();
         }
-        Debug.Log("Score: " + score);
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -86,10 +89,12 @@ public class DragAndDrop2D : MonoBehaviour
         }
     }
 
-    // Method to lock the object in place when it collides with the slot
     private void LockInSlot()
     {
         if(slot == null) return;
+
+        // when you addscore here, it adds once and then never again for some reason
+        // AddScore();
 
         isLocked = true;  // Lock the object in place
         transform.position = slot.position;  // Set the object's position to the slot's position
@@ -97,32 +102,7 @@ public class DragAndDrop2D : MonoBehaviour
         // Optionally, disable the collider to avoid further collisions
         GetComponent<Collider2D>().enabled = false;
         GetComponent<Rigidbody2D>().simulated = false;
-
-        // scoring not working
-        // if (isLocked)
-        // { if (gameObject.CompareTag("work") ||
-        //      gameObject.CompareTag("relationships") ||
-        //      gameObject.CompareTag("leisure") ||
-        //      gameObject.CompareTag("personal"));
-        //     {
-        //     scoreManager.AddScore(gameObject.tag); //error here
-        //     }
-        // }
     }
-
-    // private void Scoring()
-    // {
-    //     if (isLocked = true)
-    //         { if (gameObject.CompareTag("work") ||
-    //             gameObject.CompareTag("relationships") ||
-    //             gameObject.CompareTag("leisure") ||
-    //             gameObject.CompareTag("personal"));
-    //             {
-    //             scoreManager.AddScore(gameObject.tag); 
-    //             }
-    //         }
-    //         Debug.Log("Total Score: " + scoreManager.totalScore);
-    // }
 
     // Helper method to get the world position of the mouse
     private Vector3 GetMouseWorldPosition()
@@ -130,14 +110,5 @@ public class DragAndDrop2D : MonoBehaviour
         Vector3 mouseScreenPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouseScreenPosition.z = 0; // Make sure the z-value is 0 (since we are working in 2D)
         return mouseScreenPosition;
-    }
-
-        // Method to play the sound
-    void PlaySoundEffect()
-    {
-        if (audioSource != null && soundClip != null)
-        {
-            audioSource.PlayOneShot(soundClip);  // Plays the sound once
-        }
     }
 }
