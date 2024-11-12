@@ -9,6 +9,17 @@ public class GameManagerScript : MonoBehaviour
     public scoreManager scoreManager;
     public TextMeshProUGUI scoreText;
 
+    private float roundTimer = 10f;
+
+    void Update()
+    {
+        roundTimer -= Time.deltaTime;
+        if (roundTimer <= 0.0f)
+        {
+            EndGame();
+        }
+        else PlayState();
+    }
     void PlayState()
     {
         if (globalVariables.totalScore >= 1)
@@ -25,4 +36,10 @@ public class GameManagerScript : MonoBehaviour
             scoreText.text = "no!";
             Debug.Log("no");}
     }
+
+    void EndGame()
+    {
+        Debug.Log("game over");
+    }
+
 }
