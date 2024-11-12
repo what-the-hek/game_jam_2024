@@ -134,7 +134,6 @@ public class GameManagerScript : MonoBehaviour
             relationshipScoreText.text = $"{globalVariables.relationshipScore}";
             leisureScoreText.text = $"{globalVariables.leisureScore}";
             personalScoreText.text = $"{globalVariables.personalScore}";
-            Debug.Log("win");
         }
     }
 
