@@ -3535,6 +3535,11 @@ MonoBehaviour:
   DayText: {fileID: 391497830}
   endRoundText: {fileID: 1036889853}
   endWeekText: {fileID: 1743430765}
+  toDo1Text: {fileID: 604551792}
+  toDo2Text: {fileID: 875572132}
+  toDo3Text: {fileID: 2092164185}
+  toDo4Text: {fileID: 951240368}
+  toDo5Text: {fileID: 819945785}
 --- !u!1 &1502066798
 GameObject:
   m_ObjectHideFlags: 0
