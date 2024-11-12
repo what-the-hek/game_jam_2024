@@ -319,6 +319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: Play
   playButton: {fileID: 230747520}
+  exitButton: {fileID: 621876735}
 --- !u!1 &230747518
 GameObject:
   m_ObjectHideFlags: 0

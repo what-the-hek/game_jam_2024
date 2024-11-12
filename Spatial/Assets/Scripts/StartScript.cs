@@ -9,27 +9,23 @@ public class StartScript : MonoBehaviour
    
     public string sceneName = "";
     public Button playButton;
-
-    // void Update()
-    // {
-    //     if(Input.anyKey)
-    //     {
-    //         LoadScene();
-    //     }
-    // }
-
-    // public void LoadScene()
-    // {
-    //     SceneManager.LoadScene(sceneName);
-    // }
-
+    public Button exitButton;
 
 	void Start () {
-		Button btn = playButton.GetComponent<Button>();
-		btn.onClick.AddListener(TaskOnClick);
+		Button playBtn = playButton.GetComponent<Button>();
+		playBtn.onClick.AddListener(TaskOnClickPlay);
+
+        Button exitBtn = exitButton.GetComponent<Button>();
+		exitBtn.onClick.AddListener(TaskOnClickExit);
 	}
 
-	void TaskOnClick(){
+	void TaskOnClickPlay(){
+        SceneManager.LoadScene(sceneName);
 		Debug.Log ("You have clicked the button!");
 	}
+    void TaskOnClickExit(){
+        Application.Quit();
+		Debug.Log ("You have clicked the button!");
+	}
+
 }
