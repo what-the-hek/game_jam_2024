@@ -7,7 +7,10 @@ public class GameManagerScript : MonoBehaviour
 {
     public globalVariables globalVariables;
     public scoreManager scoreManager;
-    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI workScoreText;
+    public TextMeshProUGUI relationshipScoreText;
+    public TextMeshProUGUI leisureScoreText;
+    public TextMeshProUGUI personalScoreText;
 
     private float roundTimer = 10f;
 
@@ -18,23 +21,19 @@ public class GameManagerScript : MonoBehaviour
         {
             EndGame();
         }
-        else PlayState();
+        else ScoreText();
     }
-    void PlayState()
+    void ScoreText()
     {
         if (globalVariables.totalScore >= 1)
         {
-            scoreText.text = "You win!";
+            workScoreText.text = $"{globalVariables.workScore}";
+            relationshipScoreText.text = $"{globalVariables.relationshipScore}";
+            leisureScoreText.text = $"{globalVariables.leisureScore}";
+            personalScoreText.text = $"{globalVariables.personalScore}";
+            // scoreText.text = "You win!";
             Debug.Log("win");
         }
-        if (scoreManager.localTotalScore >= 1)
-        {
-            scoreText.text = "Yay!";
-            Debug.Log("yay");
-        }
-        else {            
-            scoreText.text = "no!";
-            Debug.Log("no");}
     }
 
     void EndGame()
