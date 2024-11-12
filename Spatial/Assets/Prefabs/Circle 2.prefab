@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 6384612607189498518}
   - component: {fileID: 900350907176394941}
   - component: {fileID: -48934825775800997}
+  - component: {fileID: -7126178583982723164}
   m_Layer: 0
   m_Name: Circle 2
-  m_TagString: Untagged
+  m_TagString: relationships
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5f69878827d05e34d94be5fa725846dc, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.75849056, b: 0.75849056, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -145,3 +146,17 @@ MonoBehaviour:
   isOverSlot: 0
   isLocked: 0
   soundClip: {fileID: 8300000, guid: cb555b41f3f97e14db049dba21d641c5, type: 3}
+  scoreManager: {fileID: 0}
+--- !u!114 &-7126178583982723164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2557335604491528486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c6cbd104c6d85e488b74a688dba9de8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localTotalScore: 0

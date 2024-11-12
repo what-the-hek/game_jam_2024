@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DragAndDrop2D : MonoBehaviour
@@ -15,11 +16,13 @@ public class DragAndDrop2D : MonoBehaviour
 
     // Reference to the sound you want to play (drag the sound file here in the Inspector)
     public AudioClip soundClip;
+    public scoreManager scoreManager;
 
     private void Start()
     {
         originalPosition = transform.position;
         audioSource = GetComponent<AudioSource>();
+        scoreManager = FindObjectOfType<scoreManager>();
     }
 
     private void OnMouseDown()
@@ -50,6 +53,7 @@ public class DragAndDrop2D : MonoBehaviour
         if (isOverSlot)
         {
             LockInSlot();
+            scoreManager.AddScore();
         }
         else
         {
@@ -63,8 +67,6 @@ public class DragAndDrop2D : MonoBehaviour
         Debug.Log("On Trigger Enter");
         if (!isLocked)
         {
-            // insert sound here pls
-            PlaySoundEffect();
             slot = other.gameObject.transform;
             isOverSlot = true;  // Set to true when the object enters the slot's trigger area
         }
@@ -80,7 +82,6 @@ public class DragAndDrop2D : MonoBehaviour
         }
     }
 
-    // Method to lock the object in place when it collides with the slot
     private void LockInSlot()
     {
         if(slot == null) return;
@@ -99,14 +100,5 @@ public class DragAndDrop2D : MonoBehaviour
         Vector3 mouseScreenPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouseScreenPosition.z = 0; // Make sure the z-value is 0 (since we are working in 2D)
         return mouseScreenPosition;
-    }
-
-        // Method to play the sound
-    void PlaySoundEffect()
-    {
-        if (audioSource != null && soundClip != null)
-        {
-            audioSource.PlayOneShot(soundClip);  // Plays the sound once
-        }
     }
 }
