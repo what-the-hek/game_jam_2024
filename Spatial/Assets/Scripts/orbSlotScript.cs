@@ -16,7 +16,7 @@ public class DragAndDrop2D : MonoBehaviour
 
     // Reference to the sound you want to play (drag the sound file here in the Inspector)
     public AudioClip soundClip;
-    private scoreManager scoreManager;
+    public scoreManager scoreManager;
 
     private void Start()
     {

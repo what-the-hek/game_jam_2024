@@ -4,42 +4,38 @@ using UnityEngine;
 
 public class scoreManager : MonoBehaviour
 {
-    public int totalScore = 0;
-    public int workScore = 0;
-    public int relationshipScore = 0;
-    public int personalScore = 0;
-    public int leisureScore = 0;
-    
+    public globalVariables globalVariables;
+
     public void AddScore()
     {  
         if (tag == "work" || tag == "leisure" || tag == "relationships" || tag == "personal") 
             {
-                totalScore += 1;
+                globalVariables.totalScore += 1;
             }
-        Debug.Log("total score: " + totalScore);
+        Debug.Log("total score: " + globalVariables.totalScore);
 
         if (tag == "work")
             {
-                workScore += 1;
+                globalVariables.workScore += 1;
             }
-        Debug.Log("work score: " + workScore);
+        Debug.Log("work score: " + globalVariables.workScore);
 
         if (tag == "leisure")
             {
-                leisureScore += 1;
+                globalVariables.leisureScore += 1;
             }
-        Debug.Log("leisure score: " + leisureScore);
+        Debug.Log("leisure score: " + globalVariables.leisureScore);
 
         if (tag == "relationships")
             {
-                relationshipScore += 1;
+                globalVariables.relationshipScore += 1;
             }
-        Debug.Log("relationships score: " + relationshipScore);
+        Debug.Log("relationships score: " + globalVariables.relationshipScore);
 
         if (tag == "personal")
             {
-                personalScore += 1;
+                globalVariables.personalScore += 1;
             }
-        Debug.Log("personal score: " + personalScore);
+        Debug.Log("personal score: " + globalVariables.personalScore);
     }
 }
