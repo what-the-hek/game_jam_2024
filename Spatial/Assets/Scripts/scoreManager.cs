@@ -24,5 +24,22 @@ public class scoreManager : MonoBehaviour
             }
         Debug.Log("work score: " + workScore);
 
+        if (tag == "leisure")
+            {
+                leisureScore += 1;
+            }
+        Debug.Log("leisure score: " + leisureScore);
+
+        if (tag == "relationships")
+            {
+                relationshipScore += 1;
+            }
+        Debug.Log("relationships score: " + relationshipScore);
+
+        if (tag == "personal")
+            {
+                personalScore += 1;
+            }
+        Debug.Log("personal score: " + personalScore);
     }
 }

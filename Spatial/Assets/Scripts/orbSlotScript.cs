@@ -53,10 +53,7 @@ public class DragAndDrop2D : MonoBehaviour
         if (isOverSlot)
         {
             LockInSlot();
-
-            // when you addscore here, it adds once and then never again for some reason
             scoreManager.AddScore();
-            // return;
         }
         else
         {
@@ -72,10 +69,6 @@ public class DragAndDrop2D : MonoBehaviour
         {
             slot = other.gameObject.transform;
             isOverSlot = true;  // Set to true when the object enters the slot's trigger area
-
-            // when this addscore is here, it is indiscriminate about whether or not the orb is locked
-            // if you try to add an islocked check it stops working altogether
-            // AddScore();
         }
     }
 
@@ -92,9 +85,6 @@ public class DragAndDrop2D : MonoBehaviour
     private void LockInSlot()
     {
         if(slot == null) return;
-
-        // when you addscore here, it adds once and then never again for some reason
-        // AddScore();
 
         isLocked = true;  // Lock the object in place
         transform.position = slot.position;  // Set the object's position to the slot's position
