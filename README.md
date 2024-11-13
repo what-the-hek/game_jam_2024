@@ -21,17 +21,25 @@ There are 7 rounds to represent the 7 days of the week. At the end of the final 
 
 ## Team
 Alex        - User Interface
+
 Courtney    - Art
+
 Goya        - Audio / Programming
+
 Jess        - Programming / UI / Animation
+
 Natalie     - Design / Narrative
+
 Rei         - Writing
 
 
 ## Tools
 Paper prototyping
+
 Unity game engine
+
 Hand drawn art, digitised
+
 Garage band
 
 #### TODO:
