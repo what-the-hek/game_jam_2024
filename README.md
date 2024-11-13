@@ -1,4 +1,4 @@
-<img img max-width="100%" src=/Assets/StartScreen1.png/>
+<img img max-width="100%" src=/Spatial//Assets/StartScreen1.png/>
 
 
 # Sound Reflections
