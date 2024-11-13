@@ -9,5 +9,5 @@ public class globalVariables
     public static int relationshipScore;
     public static int personalScore;
     public static int leisureScore;
-
+    public static int roundCount;
 }
