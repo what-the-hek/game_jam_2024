@@ -9,9 +9,6 @@ public class orbSpawn : MonoBehaviour
     // Array of prefabs to randomly instantiate (for this example, circles)
     public GameObject[] prefabs;
 
-    //public Sprite
-    // public Sprite[] circleSprites;        // Array to hold different circle PNG images
-
     // Interval for respawning circles
     public float respawnInterval = 3f;
 
@@ -35,12 +32,8 @@ public class orbSpawn : MonoBehaviour
             // Randomly choose a color (tag)
             string randomColorTag = GetRandomColorTag();
         
-
             // Instantiate the prefab at the selected spawn point
             GameObject newPrefab = Instantiate(prefabs[randomPrefabIndex], spawnPoints[randomSpawnIndex].position, Quaternion.identity);
-
-            // Assign color based on tag
-            // AssignColorBasedOnTag(newPrefab, randomColorTag);
 
             // Attach the orbSlotScript script to the newly spawned object
             DragAndDrop2D orbSlotScript = newPrefab.AddComponent<DragAndDrop2D>();
@@ -65,32 +58,4 @@ public class orbSpawn : MonoBehaviour
         return colorTags[index];
     }
 
-    // private void AssignColorBasedOnTag(GameObject newPrefab, string tag, Sprite sprite)
-    // {
-    //     // Change the circle's color based on the tag
-    //     SpriteRenderer renderer = newPrefab.GetComponent<SpriteRenderer>();
-    //     // this.GetComponent<SpriteRenderer>().sprite = someSprite;
-    //     switch (tag)
-    //     {
-    //         case "relationships":
-    //             renderer.color = Color.red;
-    //             renderer.sprite = sprite.orb_red;
-    //             break
-    //         case "work":
-    //             // renderer.color = Color.blue;
-    //             renderer.sprite = orb_blue;
-    //             break;
-    //         case "personal":
-    //             // renderer.color = Color.green;
-    //             renderer.sprite = orb_green;
-    //             break;
-    //         case "leisure":
-    //             // renderer.color = Color.yellow;
-    //             renderer.sprite = orb_yellow;
-    //             break;
-    //         default:
-    //             renderer.color = Color.white; // Default color (in case)
-    //             break;
-    //     }
-    // }
 }

@@ -18,6 +18,7 @@ public class GameManagerScript : MonoBehaviour
     public TextMeshProUGUI DayText;
     public TextMeshProUGUI endRoundText;
     public TextMeshProUGUI endWeekText;
+
     // this is the lazy way, should turn into same as orb spawn
     public TextMeshProUGUI toDo1Text;
     public TextMeshProUGUI toDo2Text;
@@ -34,7 +35,6 @@ public class GameManagerScript : MonoBehaviour
     string stringToRetrieve4;
     int randomNumber5;
     string stringToRetrieve5;
-    // int previousInstructionIndex = 0;
 
     List<string> DayList;
     string dayStringToRetrieve;
@@ -90,42 +90,24 @@ public class GameManagerScript : MonoBehaviour
         toDoList.Add("bunnings trip");
         toDoList.Add("grocery shopping");
         toDoList.Add("do some gardening");
-
-
-        // do
-        // {
-        //     randomNumber = Random.Range(0, 10);
-        // }
-        // while (randomNumber == previousInstructionIndex);
-
-        // previousInstructionIndex = randomNumber;
-        // stringToRetrieve1 = toDoList[randomNumber].ToString();
-        // toDo1Text.text = stringToRetrieve1;
-        // toDo2Text.text = stringToRetrieve2;
-        // toDo3Text.text = stringToRetrieve3;
-        // toDo4Text.text = stringToRetrieve4;
-        // toDo5Text.text = stringToRetrieve5;
+        toDoList.Add("meditation");
 
         // super lazy way to do this, will refactor later - needs some kind of check so it doesn't duplicate
-        randomNumber1 = Random.Range(0, 10);
+        randomNumber1 = Random.Range(0, 20);
         stringToRetrieve1 = toDoList[randomNumber1].ToString();
-        randomNumber2 = Random.Range(0, 10);
+        randomNumber2 = Random.Range(0, 20);
         stringToRetrieve2 = toDoList[randomNumber2].ToString();
-        randomNumber3 = Random.Range(0, 10);
+        randomNumber3 = Random.Range(0, 20);
         stringToRetrieve3 = toDoList[randomNumber3].ToString();
-        randomNumber4 = Random.Range(0, 10);
+        randomNumber4 = Random.Range(0, 20);
         stringToRetrieve4 = toDoList[randomNumber4].ToString();
-        randomNumber5 = Random.Range(0, 10);
+        randomNumber5 = Random.Range(0, 20);
         stringToRetrieve5 = toDoList[randomNumber5].ToString();
         toDo1Text.text = stringToRetrieve1;
         toDo2Text.text = stringToRetrieve2;
         toDo3Text.text = stringToRetrieve3;
         toDo4Text.text = stringToRetrieve4;
         toDo5Text.text = stringToRetrieve5;
-
-        // randomNumber = Random.Range(0, 10);
-        // stringToRetrieve = toDoList[randomNumber].ToString();
-        // toDo1Text.text = stringToRetrieve;
     }
 
     void Update()
