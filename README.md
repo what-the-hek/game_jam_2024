@@ -1,7 +1,11 @@
+<img img max-width="100%" src=/Assets/StartScreen1.png/>
+
 
 # Sound Reflections
 
 A 2D game based on the theme 'balance', created during a game jam hosted by [Level Her Up](https://levelherup.com.au/).
+
+The game will be available to play for free on [itch.io](https://whatthehek.itch.io/) soon.
 
 ## Concept
 Our interpretation of the theme was the broad concept of finding balance to maintain mental health and wellbeing. We decided to make a game that would encourage the player to reflect on how they manage their daily life.
@@ -24,9 +28,9 @@ Alex        - User Interface
 
 Courtney    - Art
 
-Goya        - Audio / Programming
+[Goya](https://www.linkedin.com/in/goya-zheng-615b54111/)        - Audio / Programming
 
-Jess        - Programming / UI / Animation
+[Jess](https://www.linkedin.com/in/jessicahek/)        - Programming / UI / Animation
 
 Natalie     - Design / Narrative
 
