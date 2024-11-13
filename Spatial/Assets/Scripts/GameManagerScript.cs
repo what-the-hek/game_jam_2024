@@ -7,10 +7,10 @@ using UnityEngine.SceneManagement;
 public class GameManagerScript : MonoBehaviour
 {
     public string sceneName = "";
-    // int randomNumber;
-    // string stringToRetrieve;
+
     public globalVariables globalVariables;
     public scoreManager scoreManager;
+
     public TextMeshProUGUI workScoreText;
     public TextMeshProUGUI relationshipScoreText;
     public TextMeshProUGUI leisureScoreText;
@@ -36,26 +36,39 @@ public class GameManagerScript : MonoBehaviour
     string stringToRetrieve5;
     // int previousInstructionIndex = 0;
 
-    // List<string> Days;
+    List<string> DayList;
+    string dayStringToRetrieve;
     List<string> toDoList;
 
     private float roundTimer = 20f;
 
-    // void NewRound()
-    // {
-    //     Days = new List<string>();
-    //     Days.Add("Monday");
-    //     Days.Add("Tuesday");
-    //     Days.Add("Wednesday");
-    //     Days.Add("Thursday");
-    //     Days.Add("Friday");
-    //     Days.Add("Saturday");
-    //     Days.Add("Sunday");
-
-    //     DayText.text = stringToRetrieve;
-    // }
     void Start()
     {
+        globalVariables.roundCount++;
+
+        if (globalVariables.roundCount >= 8)
+        {   
+            globalVariables.workScore = 0;
+            globalVariables.relationshipScore = 0;
+            globalVariables.leisureScore = 0;
+            globalVariables.personalScore = 0;
+            globalVariables.roundCount = 1;
+            EndGame();
+        }
+
+        DayList = new List<string>();
+        DayList.Add("day0");
+        DayList.Add("Monday");
+        DayList.Add("Tuesday");
+        DayList.Add("Wednesday");
+        DayList.Add("Thursday");
+        DayList.Add("Friday");
+        DayList.Add("Saturday");
+        DayList.Add("Sunday");
+
+        dayStringToRetrieve = DayList[globalVariables.roundCount].ToString();
+        DayText.text = dayStringToRetrieve;
+
         toDoList = new List<string>();
         toDoList.Add("go to work");
         toDoList.Add("call mum");
@@ -117,7 +130,6 @@ public class GameManagerScript : MonoBehaviour
 
     void Update()
     {
-        DayText.text = "Monday";
         roundTimer -= Time.deltaTime;
         if (roundTimer <= 0.0f)
         {
@@ -140,39 +152,30 @@ public class GameManagerScript : MonoBehaviour
     void EndRound()
     {   
         enabled = false;
-        endRoundText.text = "End of day";
-        StartCoroutine(NextRound());
-        // if ()
-        // {
-
-        // }// if length day <=0 {EndWeek()}
-        // else
-        // {
-        //     EndWeek();
-        // }
+        if (globalVariables.roundCount <= 6)
+        {
+            endRoundText.text = $"End of day {globalVariables.roundCount}";
+            StartCoroutine(NextRound());            
+        }
+        else if (globalVariables.roundCount >= 7)
+        {
+            endRoundText.text = "End of week";
+            StartCoroutine(EndGame());  
+        }
     }
 
     private IEnumerator NextRound()
     {
-        yield return new WaitForSeconds(7.0f);
-
+        enabled = false;
+        yield return new WaitForSeconds(6.0f);
         SceneManager.LoadScene("Play");
     }
 
-    // void EndWeek()
-    // {
-    //     // if length day <=0 {EndGame()}
-    // }
-
-    void EndGame()
+    private IEnumerator EndGame()
     {   
         enabled = false;
-        endWeekText.text = "End of week";
-        // yield return new WaitForSeconds(5.0f);
-
+        yield return new WaitForSeconds(6.0f);
         SceneManager.LoadScene(sceneName);
-
-        Debug.Log("game over");
     }
 
 }
