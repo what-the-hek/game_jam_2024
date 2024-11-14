@@ -118,6 +118,13 @@ public class GameManagerScript : MonoBehaviour
             EndRound();
         }
         else ScoreText();
+
+        if (Input.GetKeyDown("escape"))
+        {
+            Application.Quit();
+
+            Debug.Log("Quit Game.");
+        }
     }
     
     void ScoreText()
