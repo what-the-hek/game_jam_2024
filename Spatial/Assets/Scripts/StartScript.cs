@@ -21,11 +21,12 @@ public class StartScript : MonoBehaviour
 
 	void TaskOnClickPlay(){
         SceneManager.LoadScene(sceneName);
-		Debug.Log ("You have clicked the button!");
+		Debug.Log ("You have clicked Play!");
 	}
+
     void TaskOnClickExit(){
         Application.Quit();
-		Debug.Log ("You have clicked the button!");
+		Debug.Log ("You have clicked the Exit!");
 	}
 
 }

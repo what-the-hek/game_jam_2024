@@ -7,12 +7,18 @@ using UnityEngine.UI;
 
 public class EndScript : MonoBehaviour
 {
+    public string sceneName = "";
+	public Button startButton;
+
     public TextMeshProUGUI endWorkScoreText;
     public TextMeshProUGUI endRelationshipScoreText;
     public TextMeshProUGUI endLeisureScoreText;
     public TextMeshProUGUI endPersonalScoreText;
     private void Start()
     {
+        Button startBtn = startButton.GetComponent<Button>();
+        startBtn.onClick.AddListener(TaskOnClickStart);
+
         if (globalVariables.totalScore >= 1)
         {
             endWorkScoreText.text = $"{globalVariables.workScore}";
@@ -21,4 +27,9 @@ public class EndScript : MonoBehaviour
             endPersonalScoreText.text = $"{globalVariables.personalScore}";
         }
     }
+
+    void TaskOnClickStart(){
+		SceneManager.LoadScene(sceneName);
+		Debug.Log ("You have clicked the Start!");
+	}
 }
