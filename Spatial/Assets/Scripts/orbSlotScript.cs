@@ -11,18 +11,14 @@ public class DragAndDrop2D : MonoBehaviour
     private Vector3 originalPosition; // The original position of the object
     private bool isDragging = false; // Is the object being dragged?
 
-    // Reference to the AudioSource component
-    private AudioSource audioSource;
-
-    // Reference to the sound you want to play (drag the sound file here in the Inspector)
-    public AudioClip soundClip;
     public scoreManager scoreManager;
+    public SlotAudio SlotAudio;
 
     private void Start()
     {
         originalPosition = transform.position;
-        audioSource = GetComponent<AudioSource>();
         scoreManager = FindObjectOfType<scoreManager>();
+        SlotAudio = FindObjectOfType<SlotAudio>();
     }
 
     private void OnMouseDown()
@@ -54,6 +50,7 @@ public class DragAndDrop2D : MonoBehaviour
         {
             LockInSlot();
             scoreManager.AddScore();
+            SlotAudio.PlaySound();
         }
         else
         {
