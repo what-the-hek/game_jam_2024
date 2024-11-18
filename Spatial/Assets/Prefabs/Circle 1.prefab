@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eb14739c49f44e4fbfc360b54831eed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  workClip: {fileID: 8300000, guid: 0dd7d643996759046864e9b795ac833c, type: 3}
+  workClip: {fileID: 8300000, guid: 524ffef5d31abe843800ed298c352eb6, type: 3}
   relationshipClip: {fileID: 0}
   personalClip: {fileID: 0}
   leisureClip: {fileID: 0}
