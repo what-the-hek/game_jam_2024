@@ -33,28 +33,58 @@ public class orbClick : MonoBehaviour
     }
 
     void OnMouseDown(){
-        if (tag =="work") 
-        {
-            audioSource.Play();
-            Debug.Log("Work Sprite Clicked");
-        }
+        if (audioSource.isPlaying) 
+            {
+                audioSource.Stop();
+                if (tag =="work") 
+                {
+                    audioSource.Play();
+                    Debug.Log("Work Sprite Clicked");
+                }
 
-        if (tag =="personal") 
-        {
-            audioSource.Play();
-            Debug.Log("Personal Sprite Clicked");
-        }
+                if (tag =="personal") 
+                {
+                    audioSource.Play();
+                    Debug.Log("Personal Sprite Clicked");
+                }
 
-        if (tag =="relationships") 
-        {
-            audioSource.Play();
-            Debug.Log("Relationship Sprite Clicked");
-        }
+                if (tag =="relationships") 
+                {
+                    audioSource.Play();
+                    Debug.Log("Relationship Sprite Clicked");
+                }
 
-        if (tag =="leisure") 
-        {
-            audioSource.Play();
-            Debug.Log("Leisure Sprite Clicked");
-        }
+                if (tag =="leisure") 
+                {
+                    audioSource.Play();
+                    Debug.Log("Leisure Sprite Clicked");
+                }
+            }
+            else
+            {
+                if (tag =="work") 
+                {
+                    audioSource.Play();
+                    Debug.Log("Work Sprite Clicked");
+                }
+
+                if (tag =="personal") 
+                {
+                    audioSource.Play();
+                    Debug.Log("Personal Sprite Clicked");
+                }
+
+                if (tag =="relationships") 
+                {
+                    audioSource.Play();
+                    Debug.Log("Relationship Sprite Clicked");
+                }
+
+                if (tag =="leisure") 
+                {
+                    audioSource.Play();
+                    Debug.Log("Leisure Sprite Clicked");
+                }
+            }
     }
 }
