@@ -32,7 +32,7 @@ Courtney    - Art
 
 [Jess](https://www.linkedin.com/in/jessicahek/)        - Programming / UI / Animation
 
-Natalie     - Design / Narrative
+[Natalie](https://www.linkedin.com/in/natalie-marinho/)     - Design / Narrative
 
 Rei         - Writing
 
