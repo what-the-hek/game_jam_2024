@@ -50,12 +50,13 @@ public class ScoreAudio : MonoBehaviour
         audioSourceRelationship = GetComponent<AudioSource>();
         audioSourceLeisure = GetComponent<AudioSource>();
 
-        globalVariables.workScore = 0;
-        globalVariables.relationshipScore = 0;
-        globalVariables.personalScore = 0;
-        globalVariables.leisureScore = 26;
+        // globalVariables.totalScore = 4;
+        // globalVariables.workScore = 1;
+        // globalVariables.relationshipScore = 1;
+        // globalVariables.personalScore = 1;
+        // globalVariables.leisureScore = 1;
 
-        if (globalVariables.workScore > 0 ) 
+                if (globalVariables.workScore > 0 && tag =="work") 
         {
             if (globalVariables.workScore >= 1 && globalVariables.workScore <= 5) 
             {
@@ -89,7 +90,7 @@ public class ScoreAudio : MonoBehaviour
             }
         }
 
-        if (globalVariables.personalScore > 0 ) 
+        if (globalVariables.personalScore > 0 && tag =="personal") 
         {
             if (globalVariables.personalScore >= 1 && globalVariables.personalScore <= 5) 
             {
@@ -124,7 +125,7 @@ public class ScoreAudio : MonoBehaviour
         }
 
 
-        if (globalVariables.relationshipScore > 0 ) 
+        if (globalVariables.relationshipScore > 0 && tag =="relationships") 
         {
             if (globalVariables.relationshipScore >= 1 && globalVariables.relationshipScore <= 5) 
             {
@@ -159,7 +160,7 @@ public class ScoreAudio : MonoBehaviour
         }
 
 
-        if (globalVariables.leisureScore > 0 ) 
+        if (globalVariables.leisureScore > 0 && tag =="leisure") 
         {
             if (globalVariables.leisureScore >= 1 && globalVariables.leisureScore <= 5) 
             {
@@ -192,7 +193,10 @@ public class ScoreAudio : MonoBehaviour
                 Debug.Log("leisure score >= 26");
             }
         }
+    }
 
+    void OnMouseOver() 
+    {
         if (leisureClip != null) 
         {
         audioSourceLeisure.PlayOneShot(leisureClip, 0.3f);
@@ -209,5 +213,28 @@ public class ScoreAudio : MonoBehaviour
         {
         audioSourceWork.PlayOneShot(workClip, 1.0f);
         }
+        Debug.Log("sprite hover");
+    }
+
+    void OnMouseExit() 
+    {
+        if (audioSourceLeisure.isPlaying)
+        { 
+            audioSourceLeisure.Stop(); 
+        }
+        if (audioSourcePersonal.isPlaying)
+        {
+        audioSourcePersonal.Stop();
+        }
+        if (audioSourceRelationship.isPlaying)
+        {
+        audioSourceRelationship.Stop();
+        }
+        if (audioSourceWork.isPlaying)
+        {
+        audioSourceWork.Stop();
+        }
+
+        Debug.Log("no hover");
     }
 }
