@@ -50,10 +50,10 @@ public class ScoreAudio : MonoBehaviour
         audioSourceRelationship = GetComponent<AudioSource>();
         audioSourceLeisure = GetComponent<AudioSource>();
 
-        // globalVariables.workScore = 26;
-        // globalVariables.relationshipScore = 26;
-        // globalVariables.personalScore = 26;
-        // globalVariables.leisureScore = 26;
+        globalVariables.workScore = 0;
+        globalVariables.relationshipScore = 0;
+        globalVariables.personalScore = 0;
+        globalVariables.leisureScore = 26;
 
         if (globalVariables.workScore > 0 ) 
         {
@@ -193,14 +193,21 @@ public class ScoreAudio : MonoBehaviour
             }
         }
 
+        if (leisureClip != null) 
+        {
         audioSourceLeisure.PlayOneShot(leisureClip, 0.3f);
-        audioSourcePersonal.PlayOneShot(personalClip, 0.1f);
-        audioSourceRelationship.PlayOneShot(relationshipClip, 0.1f);
+        }
+        if (personalClip != null) 
+        {
+        audioSourcePersonal.PlayOneShot(personalClip, 0.3f);
+        }
+        if (relationshipClip != null) 
+        {
+        audioSourceRelationship.PlayOneShot(relationshipClip, 0.3f);
+        }
+        if (workClip != null) 
+        {
         audioSourceWork.PlayOneShot(workClip, 1.0f);
-
-        audioSourceLeisure.loop = true;
-        audioSourcePersonal.loop = true;
-        audioSourceRelationship.loop = true;
-        audioSourceWork.loop = true;
+        }
     }
 }
