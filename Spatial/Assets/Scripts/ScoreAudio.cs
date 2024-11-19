@@ -50,11 +50,11 @@ public class ScoreAudio : MonoBehaviour
         audioSourceRelationship = GetComponent<AudioSource>();
         audioSourceLeisure = GetComponent<AudioSource>();
 
-        globalVariables.totalScore = 4;
-        globalVariables.workScore = 1;
-        globalVariables.relationshipScore = 1;
-        globalVariables.personalScore = 1;
-        globalVariables.leisureScore = 1;
+        // globalVariables.totalScore = 4;
+        // globalVariables.workScore = 1;
+        // globalVariables.relationshipScore = 1;
+        // globalVariables.personalScore = 1;
+        // globalVariables.leisureScore = 1;
 
         if (globalVariables.workScore > 0 && tag =="work") 
         {
