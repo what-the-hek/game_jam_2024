@@ -50,13 +50,13 @@ public class ScoreAudio : MonoBehaviour
         audioSourceRelationship = GetComponent<AudioSource>();
         audioSourceLeisure = GetComponent<AudioSource>();
 
-        // globalVariables.totalScore = 4;
-        // globalVariables.workScore = 1;
-        // globalVariables.relationshipScore = 1;
-        // globalVariables.personalScore = 1;
-        // globalVariables.leisureScore = 1;
+        globalVariables.totalScore = 4;
+        globalVariables.workScore = 1;
+        globalVariables.relationshipScore = 1;
+        globalVariables.personalScore = 1;
+        globalVariables.leisureScore = 1;
 
-                if (globalVariables.workScore > 0 && tag =="work") 
+        if (globalVariables.workScore > 0 && tag =="work") 
         {
             if (globalVariables.workScore >= 1 && globalVariables.workScore <= 5) 
             {
@@ -197,19 +197,19 @@ public class ScoreAudio : MonoBehaviour
 
     void OnMouseOver() 
     {
-        if (leisureClip != null) 
+        if (leisureClip != null && audioSourceLeisure.isPlaying == false) 
         {
         audioSourceLeisure.PlayOneShot(leisureClip, 0.3f);
         }
-        if (personalClip != null) 
+        if (personalClip != null && audioSourcePersonal.isPlaying == false) 
         {
         audioSourcePersonal.PlayOneShot(personalClip, 0.3f);
         }
-        if (relationshipClip != null) 
+        if (relationshipClip != null && audioSourceRelationship.isPlaying == false) 
         {
         audioSourceRelationship.PlayOneShot(relationshipClip, 0.3f);
         }
-        if (workClip != null) 
+        if (workClip != null && audioSourceWork.isPlaying == false) 
         {
         audioSourceWork.PlayOneShot(workClip, 1.0f);
         }
