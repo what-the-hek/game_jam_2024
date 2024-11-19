@@ -3,7 +3,7 @@
 
 # Sound Reflections
 
-** NOTE ** this version is with my (Jess) edits and is not the final version. You can play this version for free on my [itch.io](https://whatthehek.itch.io/) page.
+** NOTE ** this version is with my (Jess) edits and is not the final version. I used this version to learn how to implement audio through code. You can play this version for free on my [itch.io](https://whatthehek.itch.io/) page.
 
 A 2D game based on the theme 'balance', created during a game jam hosted by [Level Her Up](https://levelherup.com.au/).
 
