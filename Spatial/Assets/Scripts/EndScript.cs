@@ -20,6 +20,10 @@ public class EndScript : MonoBehaviour
         Button startBtn = startButton.GetComponent<Button>();
         startBtn.onClick.AddListener(TaskOnClickStart);
 
+        // for percentage text
+        // percentageWork = globalVariables.workScore / globalVariables.totalScore * 100;
+        // endWorkScoreText.text = $"{percentageWork}%";
+
         if (globalVariables.totalScore >= 1)
         {
             totalScoreText.text = $"{globalVariables.totalScore}";
