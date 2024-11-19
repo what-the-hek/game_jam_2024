@@ -3,6 +3,8 @@
 
 # Sound Reflections
 
+** NOTE ** this version is with my (Jess) edits and is not the final version. You can play this version for free on my [itch.io](https://whatthehek.itch.io/) page.
+
 A 2D game based on the theme 'balance', created during a game jam hosted by [Level Her Up](https://levelherup.com.au/).
 
 The game will be available to play for free on [itch.io](https://itch.io/jam/level-her-up-we-can-build-it-2/) soon.
