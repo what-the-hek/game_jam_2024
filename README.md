@@ -5,7 +5,7 @@
 
 A 2D game based on the theme 'balance', created during a game jam hosted by [Level Her Up](https://levelherup.com.au/).
 
-The game will be available to play for free on [itch.io](https://whatthehek.itch.io/) soon.
+The game will be available to play for free on [itch.io](https://itch.io/jam/level-her-up-we-can-build-it-2/) soon.
 
 ## Concept
 Our interpretation of the theme was the broad concept of finding balance to maintain mental health and wellbeing. We decided to make a game that would encourage the player to reflect on how they manage their daily life.
