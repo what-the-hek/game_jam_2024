@@ -30,7 +30,7 @@ Alex        - User Interface
 
 Courtney    - Art
 
-[Goya](https://www.linkedin.com/in/goya-zheng-615b54111/)        - Audio / Programming
+[Goya](https://www.linkedin.com/in/goya-zheng-615b54111/)        - Audio
 
 [Jess](https://www.linkedin.com/in/jessicahek/)        - Programming / UI / Animation
 
