@@ -4,86 +4,58 @@ using UnityEngine;
 
 public class SlotAudio : MonoBehaviour
 {
-    public AudioClip workClip;
-    public AudioClip relationshipClip;
-    public AudioClip personalClip;
-    public AudioClip leisureClip;
+    public AudioClip[] workClips;
+    public AudioClip[] relationshipClips;
+    public AudioClip[] personalClips;
+    public AudioClip[] leisureClips;
 
-    public AudioSource audioSource;
+    private AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     public void PlaySound()
     {
-        audioSource = GetComponent<AudioSource>();
+        AudioClip selectedClip = null;
 
-        if (workClip != null)
+        // Select a random clip based on the object's tag
+        if (tag == "work" && workClips.Length > 0)
         {
-            audioSource.clip = workClip;
+            selectedClip = workClips[Random.Range(0, workClips.Length)];
+            Debug.Log($"Selected Work Clip: {selectedClip.name}");
         }
-        if (relationshipClip != null)
+        else if (tag == "personal" && personalClips.Length > 0)
         {
-            audioSource.clip = relationshipClip;
+            selectedClip = personalClips[Random.Range(0, personalClips.Length)];
+            Debug.Log($"Selected Personal Clip: {selectedClip.name}");
         }
-        if (personalClip != null)
+        else if (tag == "relationships" && relationshipClips.Length > 0)
         {
-            audioSource.clip = personalClip;
+            selectedClip = relationshipClips[Random.Range(0, relationshipClips.Length)];
+            Debug.Log($"Selected Relationship Clip: {selectedClip.name}");
         }
-        if (leisureClip != null)
+        else if (tag == "leisure" && leisureClips.Length > 0)
         {
-            audioSource.clip = leisureClip;
+            selectedClip = leisureClips[Random.Range(0, leisureClips.Length)];
+            Debug.Log($"Selected Leisure Clip: {selectedClip.name}");
         }
 
-        if (audioSource.isPlaying) 
+        // Play the selected clip
+        if (selectedClip != null)
+        {
+            if (audioSource.isPlaying)
             {
                 audioSource.Stop();
-                if (tag =="work") 
-                {
-                    audioSource.Play();
-                    Debug.Log("Work locked");
-                }
-
-                if (tag =="personal") 
-                {
-                    audioSource.Play();
-                    Debug.Log("Personal locked");
-                }
-
-                if (tag =="relationships") 
-                {
-                    audioSource.Play();
-                    Debug.Log("Relationship locked");
-                }
-
-                if (tag =="leisure") 
-                {
-                    audioSource.Play();
-                    Debug.Log("Leisure locked");
-                }
             }
-            else
-            {
-                if (tag =="work") 
-                {
-                    audioSource.Play();
-                    Debug.Log("Work locked");
-                }
 
-                if (tag =="personal") 
-                {
-                    audioSource.Play();
-                    Debug.Log("Personal locked");
-                }
-
-                if (tag =="relationships") 
-                {
-                    audioSource.Play();
-                    Debug.Log("Relationship locked");
-                }
-
-                if (tag =="leisure") 
-                {
-                    audioSource.Play();
-                    Debug.Log("Leisure locked");
-                }
-            }
+            audioSource.clip = selectedClip;
+            audioSource.Play();
+        }
+        else
+        {
+            Debug.LogWarning("No audio clip selected. Check if the tag and audio list are correct.");
+        }
     }
 }

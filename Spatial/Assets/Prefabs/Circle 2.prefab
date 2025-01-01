@@ -173,11 +173,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eb14739c49f44e4fbfc360b54831eed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  workClip: {fileID: 0}
-  relationshipClip: {fileID: 8300000, guid: 86b8a3887ab81ec458dae992bc55a8f8, type: 3}
-  personalClip: {fileID: 0}
-  leisureClip: {fileID: 0}
-  audioSource: {fileID: 0}
+  workClips: []
+  relationshipClips:
+  - {fileID: 8300000, guid: 7499089642585874289fe307edcc3479, type: 3}
+  - {fileID: 8300000, guid: 3f8bd14993b60984ba8dd6fae597a07b, type: 3}
+  - {fileID: 8300000, guid: c0d34c186e7535943938e3921dab837f, type: 3}
+  - {fileID: 8300000, guid: 1896929b6e84912409f3898025424a94, type: 3}
+  - {fileID: 8300000, guid: fd0d5567eb55f1c438bff29d831d2007, type: 3}
+  - {fileID: 8300000, guid: cb555b41f3f97e14db049dba21d641c5, type: 3}
+  personalClips: []
+  leisureClips: []
 --- !u!82 &-7027603312864323221
 AudioSource:
   m_ObjectHideFlags: 0
@@ -190,9 +195,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.52
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

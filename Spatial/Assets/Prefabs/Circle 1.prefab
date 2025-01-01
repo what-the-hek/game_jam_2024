@@ -173,11 +173,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eb14739c49f44e4fbfc360b54831eed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  workClip: {fileID: 8300000, guid: 524ffef5d31abe843800ed298c352eb6, type: 3}
-  relationshipClip: {fileID: 0}
-  personalClip: {fileID: 0}
-  leisureClip: {fileID: 0}
-  audioSource: {fileID: 0}
+  workClips:
+  - {fileID: 8300000, guid: 0683f5135d248ea44b4ede8d55628bfc, type: 3}
+  - {fileID: 8300000, guid: b3a56191272accb4786af41aafe54bd3, type: 3}
+  - {fileID: 8300000, guid: b1bd2bfefa9dc5e4294f5f5de7f4b97a, type: 3}
+  - {fileID: 8300000, guid: 14852ef1b2f11624fac2da0e2bf6b4f0, type: 3}
+  - {fileID: 8300000, guid: e0685ddcdd1ff264cb78b3efdf8bf81b, type: 3}
+  - {fileID: 8300000, guid: 0dd7d643996759046864e9b795ac833c, type: 3}
+  relationshipClips: []
+  personalClips: []
+  leisureClips: []
 --- !u!82 &-1441622116113286922
 AudioSource:
   m_ObjectHideFlags: 0
@@ -190,9 +195,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.795
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
