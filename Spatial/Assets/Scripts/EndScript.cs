@@ -10,6 +10,7 @@ public class EndScript : MonoBehaviour
     public string sceneName = "";
 	public Button startButton;
 
+    public TextMeshProUGUI totalScoreText;
     public TextMeshProUGUI endWorkScoreText;
     public TextMeshProUGUI endRelationshipScoreText;
     public TextMeshProUGUI endLeisureScoreText;
@@ -19,8 +20,13 @@ public class EndScript : MonoBehaviour
         Button startBtn = startButton.GetComponent<Button>();
         startBtn.onClick.AddListener(TaskOnClickStart);
 
+        // for percentage text
+        // percentageWork = globalVariables.workScore / globalVariables.totalScore * 100;
+        // endWorkScoreText.text = $"{percentageWork}%";
+
         if (globalVariables.totalScore >= 1)
         {
+            totalScoreText.text = $"{globalVariables.totalScore}";
             endWorkScoreText.text = $"{globalVariables.workScore}";
             endRelationshipScoreText.text = $"{globalVariables.relationshipScore}";
             endLeisureScoreText.text = $"{globalVariables.leisureScore}";

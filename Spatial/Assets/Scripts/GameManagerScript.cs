@@ -40,7 +40,7 @@ public class GameManagerScript : MonoBehaviour
     string dayStringToRetrieve;
     List<string> toDoList;
 
-    private float roundTimer = 20f;
+    private float roundTimer = 18f;
 
     void Start()
     {
@@ -81,6 +81,7 @@ public class GameManagerScript : MonoBehaviour
         toDoList.Add("pick up kids");
         toDoList.Add("learn new recipe");
         toDoList.Add("study");
+        
         toDoList.Add("go for a ride");
         toDoList.Add("invite family to dinner");
         toDoList.Add("play a game");
@@ -90,18 +91,29 @@ public class GameManagerScript : MonoBehaviour
         toDoList.Add("bunnings trip");
         toDoList.Add("grocery shopping");
         toDoList.Add("do some gardening");
-        toDoList.Add("meditation");
+        toDoList.Add("meditate");
+
+        toDoList.Add("do house repairs");
+        toDoList.Add("pay bills");
+        toDoList.Add("read a book");
+        toDoList.Add("do an online course");
+        toDoList.Add("respond to that text");
+        toDoList.Add("volunteer work");
+        toDoList.Add("babysit");
+        toDoList.Add("do the dishes");
+        toDoList.Add("go to the gym");
+        toDoList.Add("plan birthday party");
 
         // super lazy way to do this, will refactor later - needs some kind of check so it doesn't duplicate
-        randomNumber1 = Random.Range(0, 20);
+        randomNumber1 = Random.Range(0, 31);
         stringToRetrieve1 = toDoList[randomNumber1].ToString();
-        randomNumber2 = Random.Range(0, 20);
+        randomNumber2 = Random.Range(0, 31);
         stringToRetrieve2 = toDoList[randomNumber2].ToString();
-        randomNumber3 = Random.Range(0, 20);
+        randomNumber3 = Random.Range(0, 31);
         stringToRetrieve3 = toDoList[randomNumber3].ToString();
-        randomNumber4 = Random.Range(0, 20);
+        randomNumber4 = Random.Range(0, 31);
         stringToRetrieve4 = toDoList[randomNumber4].ToString();
-        randomNumber5 = Random.Range(0, 20);
+        randomNumber5 = Random.Range(0, 31);
         stringToRetrieve5 = toDoList[randomNumber5].ToString();
         toDo1Text.text = stringToRetrieve1;
         toDo2Text.text = stringToRetrieve2;

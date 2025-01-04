@@ -3,6 +3,8 @@
 
 # Sound Reflections
 
+** NOTE ** this version is with my (Jess) edits and is not the final version. I used this version to learn how to implement audio through code. You can play this version for free on my [itch.io](https://whatthehek.itch.io/) page.
+
 A 2D game based on the theme 'balance', created during a game jam hosted by [Level Her Up](https://levelherup.com.au/).
 
 The game will be available to play for free on [itch.io](https://itch.io/jam/level-her-up-we-can-build-it-2/entries) soon.
@@ -48,7 +50,7 @@ Garage band
 
 #### TODO:
 1. Sound effects for orbs going into slots
-2. Music composition during End screen, based on total score
+2. Music composition during End screen, based on total scores
 3. Sound clip plays on click, when clicking on an orb on the Start screen
 4. Animation on orbs on Start screen (little rock/wiggle back and forth)
 5. Animation on Violet on End screen (listening to music, blinking)
